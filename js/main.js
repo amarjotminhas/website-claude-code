@@ -140,8 +140,6 @@
     }
 
     form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
       var fields = Array.prototype.slice.call(
         form.querySelectorAll('input, select, textarea')
       );
@@ -153,18 +151,14 @@
       });
 
       if (firstInvalid) {
+        event.preventDefault();
         if (successBox) successBox.classList.remove('is-visible');
         firstInvalid.focus();
         return;
       }
 
-      // Static site: no backend, so acknowledge the request client-side.
-      form.reset();
-      fields.forEach(function (field) { field.removeAttribute('aria-invalid'); });
-      if (successBox) {
-        successBox.classList.add('is-visible');
-        successBox.focus();
-      }
+      // Validation passed — let Formspree handle the submission.
+      // The form will POST to Formspree, which sends the email and redirects back.
     });
 
     // Clear an error as soon as the person fixes the field.
