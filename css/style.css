@@ -404,33 +404,44 @@ ul[class], ol[class] { list-style: none; }
   .nav-toggle { display: flex; }
   .header-cta { display: none; }
 
+  /* Full-viewport wrapper that clips the sliding panel. The panel must
+     never be parked outside the viewport (position: fixed ignores the
+     root's overflow-x), or mobile browsers let the page pan sideways
+     into blank space. pointer-events: none lets clicks in the dimmed
+     area reach the .nav-overlay behind it. */
   .site-nav {
     position: fixed;
-    top: 0;
-    right: 0;
+    inset: 0;
     z-index: 95;
-    width: min(320px, 85vw);
-    height: 100dvh;
-    padding: calc(var(--header-h) + var(--space-4)) var(--space-4) var(--space-4);
-    background: var(--green-deep);
-    transform: translateX(100%);
+    overflow: hidden;
     visibility: hidden;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.35, 1),
-                visibility 0s linear 0.3s;
-    overflow-y: auto;
+    pointer-events: none;
+    transition: visibility 0s linear 0.3s;
   }
 
   .site-nav.is-open {
-    transform: translateX(0);
     visibility: visible;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.35, 1);
+    transition-delay: 0s;
   }
 
   .site-nav__list {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(320px, 85vw);
+    height: 100%;
+    padding: calc(var(--header-h) + var(--space-4)) var(--space-4) var(--space-4);
+    background: var(--green-deep);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.35, 1);
+    overflow-y: auto;
+    pointer-events: auto;
   }
+
+  .site-nav.is-open .site-nav__list { transform: translateX(0); }
 
   .site-nav__link {
     display: block;
@@ -1296,7 +1307,10 @@ ul[class], ol[class] { list-style: none; }
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  /* minmax(0, …) lets columns shrink below min-content — the email
+     address is otherwise unbreakable and forces the page wider than
+     the screen on mobile. */
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
   gap: var(--space-5);
   padding-block: var(--space-6);
 }
@@ -1344,6 +1358,7 @@ ul[class], ol[class] { list-style: none; }
   font-size: var(--text-sm);
   display: grid;
   gap: 0.55rem;
+  overflow-wrap: anywhere;
 }
 
 .site-footer address a { color: var(--sand-light); text-decoration: none; }
@@ -1399,6 +1414,7 @@ ul[class], ol[class] { list-style: none; }
   .service-block__figure { max-width: 460px; }
   .trust-bar__list { grid-template-columns: repeat(2, 1fr); row-gap: var(--space-3); }
   .stats-band { grid-template-columns: 1fr; gap: var(--space-4); }
+  .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
 }
 
 @media (max-width: 640px) {
@@ -1410,4 +1426,5 @@ ul[class], ol[class] { list-style: none; }
   .cta-band__inner { flex-direction: column; align-items: flex-start; }
   .article-nav { flex-direction: column; }
   .article-nav .next { text-align: left; }
+  .site-footer__grid { grid-template-columns: 1fr; }
 }
