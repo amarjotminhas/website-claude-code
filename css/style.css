@@ -61,6 +61,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 1rem);
+  /* The off-canvas nav is parked past the right edge (translateX(100%));
+     without this, mobile browsers treat it as horizontal overflow and let
+     the page pan sideways, leaving the open menu half off-screen. */
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
