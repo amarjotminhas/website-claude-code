@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Free Quote — Ironwood Construction Co.</title>
+  <meta name="description" content="Request a free construction quote from Ironwood Construction Co. in Portland, OR. Call (503) 555-0148 or send project details — we reply within one business day.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232C3E2F'/%3E%3Cpath d='M8 8h16M8 24h16M16 8v16' stroke='%23D4A373' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="Ironwood Construction Co. — home">
+        <svg class="logo__mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false">
+          <rect x="1.5" y="1.5" width="31" height="31" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M9 9.5h16M9 24.5h16M17 9.5v15" fill="none" stroke="#A67C52" stroke-width="3"/>
+        </svg>
+        <span class="logo__name">Ironwood<span class="logo__sub">Construction Co.</span></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Home</a></li>
+          <li><a class="site-nav__link" href="about.html">About</a></li>
+          <li><a class="site-nav__link" href="services.html">Services</a></li>
+          <li><a class="site-nav__link" href="projects.html">Projects</a></li>
+          <li><a class="site-nav__link" href="testimonials.html">Testimonials</a></li>
+          <li><a class="site-nav__link" href="blog.html">Blog</a></li>
+          <li><a class="site-nav__link" href="contact.html" aria-current="page">Contact</a></li>
+          <li class="site-nav__cta-item"><a class="btn btn--sand" href="contact.html#quote">Get a Free Quote</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--sand header-cta" href="contact.html#quote">Get a Free Quote</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <main id="main">
+
+    <div class="page-header">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Tell us what you're building.</h1>
+        <p>Send the details below and we'll reply within one business day — usually with a site-visit time, not a sales pitch.</p>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="quote-heading">
+      <div class="container contact-grid">
+
+        <form id="quote-form" class="quote-form" action="#" method="post" novalidate aria-labelledby="quote-heading">
+          <p class="eyebrow" id="quote">Free quote request</p>
+          <h2 id="quote-heading" style="margin-bottom: 1.5rem;">Request your free quote</h2>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+              <p class="field-error" id="name-error" role="alert"></p>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
+              <p class="field-error" id="phone-error" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <p class="field-error" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="project-type">Project type</label>
+              <select id="project-type" name="project-type" required>
+                <option value="">Choose one…</option>
+                <option value="custom-home">Custom home</option>
+                <option value="commercial">Commercial construction</option>
+                <option value="renovation">Renovation or addition</option>
+                <option value="design-build">Design-build</option>
+                <option value="concrete">Concrete &amp; foundations</option>
+                <option value="management">Project management</option>
+                <option value="other">Something else</option>
+              </select>
+              <p class="field-error" id="project-type-error" role="alert"></p>
+            </div>
+            <div class="form-field">
+              <label for="budget">Budget range <span style="text-transform:none; letter-spacing:0; color:var(--ink-soft);">(optional)</span></label>
+              <select id="budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option value="under-50k">Under $50k</option>
+                <option value="50-150k">$50k – $150k</option>
+                <option value="150-500k">$150k – $500k</option>
+                <option value="500k-1m">$500k – $1M</option>
+                <option value="over-1m">Over $1M</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="message">About the project</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Location, rough scope, and any timeline you have in mind."></textarea>
+            <p class="field-error" id="message-error" role="alert"></p>
+          </div>
+
+          <div class="form-consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">You may contact me by phone or email about this request. We never share your details with anyone else.</label>
+          </div>
+          <p class="field-error" id="consent-error" role="alert" style="margin-top:-1rem; margin-bottom:1.5rem;"></p>
+
+          <button class="btn btn--solid" type="submit">Send quote request</button>
+
+          <div class="form-success" id="form-success" role="status" tabindex="-1">
+            <h3>Request received — thank you.</h3>
+            <p>We'll get back to you within one business day. If it's urgent, call <a href="tel:+15035550148">(503) 555-0148</a> and ask for the estimating desk.</p>
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-card">
+            <h2>Visit the office</h2>
+            <address>
+              1427 Foundry Road<br>
+              Portland, OR 97210
+            </address>
+            <p style="margin-top:0.5rem;">Street parking on Foundry Road; the shop entrance is around back.</p>
+          </div>
+          <div class="info-card">
+            <h2>Call or write</h2>
+            <p><a href="tel:+15035550148">(503) 555-0148</a><br>
+            <a href="mailto:office@ironwoodconstruction.com">office@ironwoodconstruction.com</a></p>
+          </div>
+          <div class="info-card">
+            <h2>Office hours</h2>
+            <table class="hours-table">
+              <tbody>
+                <tr><th scope="row">Monday – Friday</th><td>7:00 am – 5:00 pm</td></tr>
+                <tr><th scope="row">Saturday</th><td>By appointment</td></tr>
+                <tr><th scope="row">Sunday</th><td>Closed</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-card">
+            <h2>Service area</h2>
+            <p>Portland metro and surrounds — Beaverton, Lake Oswego, Hillsboro, Gresham, Sherwood, and up to 60 miles out for full builds.</p>
+          </div>
+          <div class="info-card">
+            <h2>Credentials</h2>
+            <p>Oregon CCB #187423 · Licensed, bonded &amp; insured · General liability $2M</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <a class="logo" href="index.html" aria-label="Ironwood Construction Co. — home">
+          <svg class="logo__mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false">
+            <rect x="1.5" y="1.5" width="31" height="31" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M9 9.5h16M9 24.5h16M17 9.5v15" fill="none" stroke="#D4A373" stroke-width="3"/>
+          </svg>
+          <span class="logo__name">Ironwood<span class="logo__sub">Construction Co.</span></span>
+        </a>
+        <p class="site-footer__about">Family-owned general contractor serving the Portland metro since 1998. Built right. Built to last.</p>
+        <p class="site-footer__license">Licensed · Bonded · Insured<br>OR CCB #187423</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="services.html#custom-homes">Custom homes</a></li>
+          <li><a href="services.html#commercial">Commercial</a></li>
+          <li><a href="services.html#renovations">Renovations</a></li>
+          <li><a href="services.html#design-build">Design-build</a></li>
+          <li><a href="services.html#concrete">Concrete &amp; foundations</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <span>1427 Foundry Road<br>Portland, OR 97210</span>
+          <a href="tel:+15035550148">(503) 555-0148</a>
+          <a href="mailto:office@ironwoodconstruction.com">office@ironwoodconstruction.com</a>
+          <span>Mon–Fri, 7:00 am – 5:00 pm</span>
+        </address>
+      </div>
+    </div>
+    <div class="site-footer__bar">
+      <div class="container">
+        <p>© <span id="footer-year">2026</span> Ironwood Construction Co. All rights reserved.</p>
+        <p>Equal-opportunity employer &amp; drug-free workplace.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
